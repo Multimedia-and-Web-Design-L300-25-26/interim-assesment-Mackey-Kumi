@@ -178,7 +178,10 @@ app.get('/seed', async (req, res) => {
     const createdCryptos = await Crypto.insertMany([
       { name: 'Bitcoin', symbol: 'BTC', price: 65000, image: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png', change24h: 2.5 },
       { name: 'Ethereum', symbol: 'ETH', price: 3500, image: 'https://cryptologos.cc/logos/ethereum-eth-logo.png', change24h: 1.2 },
-      { name: 'Solana', symbol: 'SOL', price: 150, image: 'https://cryptologos.cc/logos/solana-sol-logo.png', change24h: 5.4 },
+      { name: 'Tether', symbol: 'USDT', price: 1.00, image: 'https://cryptologos.cc/logos/tether-usdt-logo.png', change24h: 0.01 },
+      { name: 'XRP', symbol: 'XRP', price: 0.50, image: 'https://cryptologos.cc/logos/xrp-xrp-logo.png', change24h: -0.5 },
+      { name: 'BNB', symbol: 'BNB', price: 600, image: 'https://cryptologos.cc/logos/bnb-bnb-logo.png', change24h: 1.5 },
+      { name: 'USDC', symbol: 'USDC', price: 1.00, image: 'https://cryptologos.cc/logos/usd-coin-usdc-logo.png', change24h: 0.00 },
     ]);
     res.json({ message: 'Data Seeded!', data: createdCryptos });
   } catch (error) {
