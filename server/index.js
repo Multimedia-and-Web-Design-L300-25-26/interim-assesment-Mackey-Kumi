@@ -16,7 +16,10 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin: 'http://localhost:5173', // Vite default port
+  origin: [
+    'http://localhost:5173',
+    process.env.FRONTEND_URL || 'https://mackey-kumi-crypto-app.netlify.app'
+  ],
   credentials: true
 }));
 
